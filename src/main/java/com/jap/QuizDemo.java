@@ -5,7 +5,10 @@ public class QuizDemo {
     //return the school name which has got the highest score in quiz
     //Handle the NumberFormatException
     public String highestScore(String []nameOfSchool , String[] scores ){
+        for (int index = 0; index < scores.length; index++) {
 
+
+        }
 
         return "";
 
