@@ -2,31 +2,25 @@ package com.jap;
 
 public class QuizDemo {
 
-    //return the school name which has got the highest score in quiz
-    //Handle the NumberFormatException
-    public String highestScore(String []nameOfSchool , String[] scores ){
+    public String highestScore(String []nameOfSchool , String[] scores ) {
+        int flag = 0;
         try {
-            for (int index = 0; index < scores.length; index++) {
-                
-            }
-            for (int index = 1; index < scores.length; index++) {
-                int temp = 0;
-                if (Integer.parseInt(scores[index])>Integer.parseInt(scores[index])){
-                    temp = Integer.parseInt(scores[index]);
-                    scores[index]=scores[index];
-                    scores[index] = String.valueOf(temp);
-                    nameOfSchool[index] = nameOfSchool[index];
+            int highestScore = Integer.parseInt(scores[0]);
+            int index;
+            for (index = 0; index < scores.length; index++) {
+                if (Integer.parseInt(scores[index]) > highestScore) {
+                    highestScore = Integer.parseInt(scores[index]);
+                    flag = index;
                 }
-                return nameOfSchool[nameOfSchool.length-1];
-            }
-        } catch (NumberFormatException e) {
-            return "java.lang.NumberFormatException: For input string: \"fifty-six\"" ;
-        }
-        return "";
 
+            }
+        } catch (NumberFormatException exception) {
+            return exception.toString();
+        }
+
+        return nameOfSchool[flag];
     }
-    //convert all the names in uppercase
-    //Handle the NullPointerException
+
     public String[] convertAllNamesToCapital(String name[]){
         String upperCase[] = new String[0];
         try {
