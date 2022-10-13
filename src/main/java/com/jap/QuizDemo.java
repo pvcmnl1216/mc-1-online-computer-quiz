@@ -3,22 +3,21 @@ package com.jap;
 public class QuizDemo {
 
     public String highestScore(String []nameOfSchool , String[] scores ) {
-        int flag = 0;
+        int number = 0;
         try {
             int highestScore = Integer.parseInt(scores[0]);
             int index;
             for (index = 0; index < scores.length; index++) {
                 if (Integer.parseInt(scores[index]) > highestScore) {
                     highestScore = Integer.parseInt(scores[index]);
-                    flag = index;
+                    number = index;
                 }
-
             }
         } catch (NumberFormatException exception) {
             return exception.toString();
         }
 
-        return nameOfSchool[flag];
+        return nameOfSchool[number];
     }
 
     public String[] convertAllNamesToCapital(String name[]){
@@ -26,7 +25,6 @@ public class QuizDemo {
         try {
             for (int index = 0; index < name.length; index++) {
                 upperCase[index] = name[index].toUpperCase();
-
             }
         } catch (NullPointerException exception){
           return new String[]{"java.lang.NullPointerException"};
