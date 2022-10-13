@@ -19,7 +19,6 @@ public class QuizDemo {
 
         return nameOfSchool[number];
     }
-
     public String[] convertAllNamesToCapital(String name[]){
         String upperCase[] = new String[0];
         try {
